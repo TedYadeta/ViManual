@@ -1,0 +1,181 @@
+ViManual v.0.0.12
+
+The ViManual Text Document is meant to be a full documented list of all the commands in:
+
+	- Normal Mode
+
+	- Insert Mode
+
+	- Visual Mode
+
+
+	I. Normal Mode
+
+	"Normal Mode" is the default mode that ViM opens in. It is here, that users can access the other modes, to 
+	manipulate text. Below is a list of commands that can be run while in "Normal Mode."
+
+		a - Append text	
+		A - Append text after the end of the line
+		b - Move backward one word (This will place the cursor on the first letter of the word.)
+		c - Change a word
+		cc - Change a whole line
+		ce - Delete one word and enter Insert Mode.
+		cl - Change one character
+		c$ - Delete the entire line after the cursor and enter Insert Mode.
+		C - Change to end of line
+		daw - Delete a word (This is useful if the cursor is in the middle of the word, versus 'dw' which is useful if the cursor is at the beginning of the word.)
+		db - Delete from cursor to previous start of word
+		dd - Delete a line
+		dG - Delete until the end of the file
+		dgg - Delete until the start of the file
+		dh - Delete character left of the cursor
+		diw - Delete word under the cursor (excluding white space)
+		dl - Delete character under the cursor
+		dw - Delete a word
+		d$ - Delete from the cursor to the end of the line
+		d#w - Delete a number (#) of words
+		D - Delete to the end of the line
+		e - Move forward one word (This will place the cursor on the last letter of the word.)
+		f - Search for a single character forward in the line that the cursor is on.
+		F - Search for a single character backwards in the line that cursor is on.
+		gg - Go to the start of the file.	
+		G - Go to the bottom of the file.
+		#G - Move to a specific line (Useful for Line-Specific Errors)
+		h - Move the cursor left (#h will move the cursor left # of times)
+		i - Enter 'Insert Mode'
+		j - Move the cursor down (#j will move the cursor down # of times
+		J - Join the lines between the cursor together
+		k - Move the cursor up 
+		l - Move the cursor right	
+		n - Search for the same phrase again (after using /)
+		N - Search for the same phrase in the backward direction	
+		o - Opens a line below the cursor
+		O - Opens a line above the cursor
+		p - Put previously deleted text after the cursor (Use dd first)	
+		r - Replace the character at the cursor
+		R - Enter Replace Mode (This allows you to replace more than one character.)
+		s - Change one character
+		S - Change a whole line
+		t - Search for a single character in a line but stopping one character before.
+		T - Search for a single character in a line backwards but stopping one character before.
+		u - Undo the last command
+		U - Undo an entire line
+		v - Enter Visual Mode
+		V - Enter Visual Mode (This alternative command allows you to select whole lines, versus 'v' which will do entire characters.)
+		w - Move forward one word
+		x - Delete the character under the cursor
+		X - Delete the character left of the cursor
+		y - Yank (Copy) text
+		yy - Yank an entire line
+		y$ - Yank until the end of the line
+		zb - Puts the cursor line at the bottom
+		zt - Puts the cursor line at the top
+		zz - Puts the cursor line in the middle 	
+		ZZ - Save and quit VIM
+		2w - Move the cursor two words forward
+		3e - Move the cursor to the end of the third word forward.
+		0 - Move to the start of the line
+
+		
+		`` - Jump back to your original location after using G or gg
+		$ - Move the cursor to the line (If you place it in behind a word (ex. word$), it will only match 'word', if it's at the end of a line.)
+		^ - Move to the first non-blank character of the line. (If you place it in front of a word (ex. ^word), it will only match 'word', if it's at the beginning of a line.)	
+		% - Match parentheses
+		\ - Escape character (when using characters with special meanings.)
+		/ - Search for a specific word
+		/word\> - Search for an exact word
+		? - Search for a phrase in the backward direction
+
+		Ctrl + B - Scroll backward one screen
+		Ctrl + D - Scroll the window down half a screen of text
+		Ctrl + E - Scroll the window down one line at a time
+		Ctrl + F - Scroll forward one screen
+		Ctrl + G - Show your location in the file and the file status.
+		Ctrl + I - Jump to newer positions (Use this after using 'Ctrl + O' to move forward)
+		Ctrl + O - Jump to older position (This jumps back if you went through a hyperlink.)
+		Ctrl + R - Redo
+		Ctrl + T - Pop tag (This jumps back if you went through a hyperlink.)
+		Ctrl + U - Scroll the window up half a screen of text
+		Ctrl + Y - Scroll the window up one line at a time
+		Ctrl + ] - Jump to tag (This jumps to a hyperlink with the ViM Help Files.)
+
+		<ESC> - Cancel an operation (if you've entered the wrong character) 
+
+	II. Command-Line Mode
+
+	"Command-Line Mode" is used to enter Ex commands (":"), search patterns ("/" and "?"), and filter commands ("!").
+		
+		:colorscheme - ***TO BE EDITED***
+		:e/:edit - Edit the current file
+		:e! - Reloads the original version of the file
+		:help - Get Help regarding Vim
+			:help index - Opens the help index
+			:help i_* (This opens a help command for the character (here marked "*") in "Insert Mode")
+			:help v_* (This opens a help command for the character (here marked "*") in "Visual Mode")
+
+		:jumps - Gives a list of commands of what jumps you've done
+		:map - Maps key sequences to a single command
+		:marks - Gives a list of marks in the file you have open
+		:s%/old/new/g to substitute one word for another (/g if you want to change that whole word for the line)
+		:set - Set an option (If you want to turn off an option, type 'no' in front of the option; ex. :set nonumber)
+
+			:set background - Change the background (ex. ":set background=light" to change to a light background)
+
+			:set cmdheight - Sets the number of lines used for messages at the bottom of the window
+
+			:set compatible - Has the effect of making Vim either more Vi-compatible, or make Vim behave in a more useful way.
+
+			:set history - Change how far back the history saves, to see what commands and edits you've done
+
+			:set ignorecase - The option to ignore uppercase and lowercase when searching for words or phrases.
+
+			:set incsearch - Makes "Vim display the match for the string while you are still typing it."
+			
+			:set hlsearch - Sets the option to highlight words when searching
+
+			:set list - See where tabs were entered in a file for visibility (^I marks <Tab>, $ marks the end of the line)
+			
+			:set number - Sets the option for line numbers
+
+			:set ruler - Displays the cursor position in the lower right corner of the Vim window
+
+			:set scriptnames - Locates where scripts and Vim startup files are.
+			
+			:set showcmd - Show (partial) command in the last line of the screen
+
+			:set sidescroll - Sets automatic side-scrolling when you move to text that is not displayed
+
+			:set wildmenu - Sets up command-line completion to operate in an enhanced mode, showing possible matches above the command line
+
+			:set wildmode - Display completion matches in a status line 
+
+			:set wrap - Wraps the text around the terminal, continuing the line on the line below
+
+			:set wrapscan - Allows searches to wrap around the file ('On' by default.)
+
+		:q - Quit Vim (without saving)
+		:r <FILENAME> - Insert the contents of a file into the currently opened FILE.
+		:version - Print the version number of the editor
+		:w - Save the file
+		:wq! - Save the file and quit Vim
+		:write - Write the whole buffer to the current file 
+		:! <external command> - Execute an External Normal (ex. ls, cd, etc.)
+
+	III. Insert Mode
+
+	"Insert Mode" is the actual way of adding text to the document itself. "Insert Mode" can be accessed from
+	"Normal Mode" by pressing "i".
+
+
+	IV. Visual Mode
+
+	"Visual Mode" is simply a mode for highlighting text. "Visual Mode" can be accessed from "Normal Mode" by 
+	pressing "v". You can also enter "Visual Mode" by typing "V", if you want to edit entire lines at a time,
+	or press "CTRL + V" if you want to tackle entire blocks, otherwise known as "Visual Block" mode.
+
+		h - Move the cursor left
+		j - Move the cursor down
+		k - Move the cursor up
+		l - Move the cursor right
+		o - Go to the other end of the line (In "Visual Block" mode, you can select another corner 		
+		y - Yank/Copy text
